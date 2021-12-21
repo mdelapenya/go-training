@@ -47,7 +47,7 @@ public class App {
 		for (int i = 0; i < records.size(); i++) {
 			String[] record = records.get(i);
 
-			problems[i] = new Problem(record[0], record[1], Integer.parseInt(record[2]));
+			problems[i] = new Problem(record[0], record[1], i);
 		}
 
 		return problems;
