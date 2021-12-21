@@ -19,12 +19,11 @@ import java.util.Scanner;
 
 /**
  * Quiz!
- *
  */
 public class App {
 
-    public static void main( String[] args ) {
-        System.out.println( "Hello Quiz!" );
+	public static void main(String[] args) {
+		System.out.println("Hello Quiz!");
 
 		// create a scanner so we can read the command-line input
 		Scanner scanner = new Scanner(System.in);
@@ -32,14 +31,13 @@ public class App {
 		try {
 			Quiz quiz = new Quiz(scanner, loadCSV("/quiz.csv"));
 			quiz.start();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-    private static Problem[] loadCSV(String filename) throws IOException, URISyntaxException {
-    	URI uri = App.class.getResource(filename).toURI();
+	private static Problem[] loadCSV(String filename) throws IOException, URISyntaxException {
+		URI uri = App.class.getResource(filename).toURI();
 		Reader reader = Files.newBufferedReader(Paths.get(uri));
 		List<String[]> records = readCSVFile(reader);
 

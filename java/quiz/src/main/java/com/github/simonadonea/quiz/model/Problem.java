@@ -38,7 +38,7 @@ public class Problem {
 	}
 
 	public boolean ask(Scanner scanner) {
-		System.out.format("Question %d: %s\n", this.index+1, this.question);
+		System.out.format("Question %d: %s\n", this.index + 1, this.question);
 
 		System.out.print("Answer: ");
 
