@@ -30,7 +30,7 @@ public class App {
 		Scanner scanner = new Scanner(System.in);
 
 		try {
-			Quiz quiz = new Quiz(scanner, loadCSV("quiz.csv"));
+			Quiz quiz = new Quiz(scanner, loadCSV("/quiz.csv"));
 			quiz.start();
 		}
 		catch (Exception e) {
@@ -39,7 +39,7 @@ public class App {
 	}
 
     private static Problem[] loadCSV(String filename) throws IOException, URISyntaxException {
-		URI uri = ClassLoader.getSystemResource(filename).toURI();
+    	URI uri = App.class.getResource(filename).toURI();
 		Reader reader = Files.newBufferedReader(Paths.get(uri));
 		List<String[]> records = readCSVFile(reader);
 
